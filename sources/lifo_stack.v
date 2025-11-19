@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module stack_pointer (
   input wire clk,
   input wire rst,
@@ -27,6 +28,7 @@ assign empty      = empty_r;
 assign stack_addr = stack_addr_reg; 
 endmodule
 
+`timescale 1ns/1ns
 module stack_ram (
   input wire clk,
   input wire  [4:0] stack_addr,
@@ -46,6 +48,7 @@ end
 assign stack_data_out = stack_re ? stack_arr[stack_addr] : '0; 
 endmodule
 
+`timescale 1ns/1ns
 module stack_data_mux (
   input  wire [3:0] data_in,
   input  wire [3:0] pc_in,
@@ -55,6 +58,7 @@ module stack_data_mux (
 assign stack_mux_out = stack_mux_sel ? data_in : pc_in;
 endmodule
 
+`timescale 1ns/1ns
 module lifo_stack (
   input  wire clk,
   input  wire [3:0] stack_data_1_in,
