@@ -1,0 +1,10 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1763553517" />
+    <testcase name="test_reset_operation" classname="test_lifo_stack_hidden" file="/home/dell/Music/Phinity_Labs/lifo_stack_github/lifo_stack_golden/lifo_stack/tests/test_lifo_stack_hidden.py" lineno="9" time="0.003579378128051758" sim_time_ns="41.0" ratio_time="11454.50369679611" />
+    <testcase name="test_push_operation" classname="test_lifo_stack_hidden" file="/home/dell/Music/Phinity_Labs/lifo_stack_github/lifo_stack_golden/lifo_stack/tests/test_lifo_stack_hidden.py" lineno="48" time="0.002911090850830078" sim_time_ns="61.0" ratio_time="20954.34430794431" />
+    <testcase name="test_pop_operation" classname="test_lifo_stack_hidden" file="/home/dell/Music/Phinity_Labs/lifo_stack_github/lifo_stack_golden/lifo_stack/tests/test_lifo_stack_hidden.py" lineno="103" time="0.003125429153442383" sim_time_ns="51.0" ratio_time="16317.759096803722" />
+    <testcase name="test_full_flag" classname="test_lifo_stack_hidden" file="/home/dell/Music/Phinity_Labs/lifo_stack_github/lifo_stack_golden/lifo_stack/tests/test_lifo_stack_hidden.py" lineno="171" time="0.02580547332763672" sim_time_ns="551.0" ratio_time="21352.059425699397" />
+    <testcase name="test_empty_flag" classname="test_lifo_stack_hidden" file="/home/dell/Music/Phinity_Labs/lifo_stack_github/lifo_stack_golden/lifo_stack/tests/test_lifo_stack_hidden.py" lineno="249" time="0.04491996765136719" sim_time_ns="1031.0" ratio_time="22951.931043267803" />
+  </testsuite>
+</testsuites>
