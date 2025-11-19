@@ -35,9 +35,9 @@ async def test_reset_operation(dut):
     await RisingEdge(dut.clk)
 
     # Checks
-    assert dut.empty_o.value == 1, "After reset, empty_o must be 1"
-    assert dut.full_o.value == 0,  "After reset, full_o must be 0"
-    assert dut.stack_data_out.value == 0, "Data_out must be 0 when stack_re=0"
+    assert dut.empty_o.value == 1,"After reset, empty_o must be 1"
+    assert dut.full_o.value == 0,"After reset, full_o must be 0"
+    assert dut.stack_data_out.value == 0,"Data_out must be 0 when stack_re=0"
 
     dut._log.info("Reset operation test PASSED.")
 
@@ -87,14 +87,14 @@ async def test_push_operation(dut):
     await RisingEdge(dut.clk)
 
     # Pointer must be non-zero → not empty
-    assert dut.empty_o.value == 0, "Stack must NOT be empty after one push"
+    assert dut.empty_o.value == 0,"Stack must NOT be empty after one push"
 
     # Stack should not be full
-    assert dut.full_o.value == 0, "Stack should NOT be full after one push"
+    assert dut.full_o.value == 0,"Stack should NOT be full after one push"
 
-    assert dut.stack_addr_w.value == 1, "Stack address should be incremented after a push operation"
+    assert dut.stack_addr_w.value == 1,"Stack address should be incremented after a push operation"
 
-    assert dut.stack_data_in_w.value == 0xA, "Invalid data given"
+    assert dut.stack_data_in_w.value == 0xA,"Invalid data given"
     dut._log.info("Push operation test PASSED.")
 
 # ================================================================
