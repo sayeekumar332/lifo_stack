@@ -7,11 +7,6 @@ from cocotb.triggers import RisingEdge, FallingEdge, Timer
 from cocotb_test.simulator import run
 
 
-@cocotb.test()
-async def example_test(dut):
-    pass
-
-
 def test_lifo_stack_runner():
     sim = os.getenv("SIM", "icarus")
 
