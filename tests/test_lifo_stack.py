@@ -1,9 +1,5 @@
 import os
 from pathlib import Path
-
-import cocotb
-from cocotb.clock import Clock
-from cocotb.triggers import RisingEdge, FallingEdge, Timer
 from cocotb_test.simulator import run
 
 
