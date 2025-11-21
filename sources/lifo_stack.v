@@ -39,10 +39,10 @@ module stack_ram (
 reg [3:0] stack_arr [16:0];
 always@(posedge clk) begin
   if(stack_we) begin
-    stack_arr[stack_addr] = stack_data_in;
+    stack_arr[stack_addr] <= stack_data_in;
   end
 end
-assign stack_data_out = stack_re ? stack_arr[stack_addr] : '0; 
+assign stack_data_out = stack_re ? stack_arr[stack_addr] : 4'b0000; 
 endmodule
 
 `timescale 1ns/1ns
