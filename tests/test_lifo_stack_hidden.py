@@ -313,3 +313,31 @@ async def test_empty_flag(dut):
     assert dut.full_o.value == 0, "FULL must be 0 when EMPTY"
 
     dut._log.info("EMPTY FLAG test PASSED.")
+
+
+# ✅ CRITICAL: Pytest wrapper function (REQUIRED for HUD validation)
+def test_lifo_stack_hidden_runner():
+    """Pytest wrapper to run cocotb tests"""
+    import os
+    from pathlib import Path
+    from cocotb_tools.runner import get_runner
+    
+    sim = os.getenv("SIM", "icarus")
+    proj_path = Path(__file__).resolve().parent.parent
+    
+    # List all source files
+    sources = [
+        proj_path / "sources/lifo_stack.v",
+    ]
+    
+    runner = get_runner(sim)
+    runner.build(
+        sources=sources,
+        hdl_toplevel="lifo_stack",
+        always=True,
+    )
+    
+    runner.test(
+        hdl_toplevel="lifo_stack",
+        test_module="test_lifo_stack_hidden"
+    )
