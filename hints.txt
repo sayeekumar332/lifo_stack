@@ -1,0 +1,41 @@
+pointer_control: 
+  The pointer should only change when stack_push or stack_pop is explicitly requested. 
+  Think about how the pointer value should reflect the number of valid stack entries.
+
+operation_timing: 
+  Consider the order in which RAM access and pointer updates logically occur during push and pop operations. 
+  The interaction between stack_we, stack_re, and pointer updates is often the key to correct behavior.
+
+memory_access:
+  The RAM write should occur based on the current pointer value, while the read should reflect the 
+  entry at the pointer location after any required updates. Reflect on how asynchronous read interacts 
+  with a synchronous write design.
+
+boundary_conditions:
+  Ensure that the pointer never moves beyond its valid range (0 to 16). Review how full and empty 
+  should behave at these boundaries and how push/pop requests should be handled when these limits are reached.
+
+flag_consistency:
+  The empty and full flags should always be consistent with the current pointer value. 
+  Revisit how these flags should behave immediately after push, pop, or reset.
+
+mux_behavior:
+  Think carefully about which data source should reach the RAM during a push operation and how 
+  stack_mux_sel governs this choice.
+
+reset_handling:
+  After reset, the system should reflect an empty stack. Consider which internal signals or registers 
+  need to be in a known state to satisfy this condition.
+
+address_alignment:
+  RAM addressing must always correspond to the pointer. If data appears incorrect when reading or writing, 
+  inspect how the address is being supplied to the RAM.
+
+read_enable_semantics:
+  stack_re should determine when stack_data_out reflects meaningful RAM contents. 
+  Consider what value stack_data_out should show when stack_re is not active.
+
+debug_strategy:
+  Trace the pointer, RAM address, and flags across several cycles of push and pop activity. 
+  Misalignment among these signals is often the cause of test failures.
+
